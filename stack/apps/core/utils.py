@@ -4,7 +4,7 @@ from backoff import on_exception, expo
 import requests
 
 MINUTES_IN_SECONDS = 60
-CALLS_PER_MINUTES_IN_SECONDS = 2
+CALLS_PER_MINUTES_IN_SECONDS = 5
 
 DAY_IN_SECONDS = 86400
 CALLS_PER_DAY = 100
