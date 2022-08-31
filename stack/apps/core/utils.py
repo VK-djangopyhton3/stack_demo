@@ -9,6 +9,7 @@ CALLS_PER_MINUTES_IN_SECONDS = 2
 DAY_IN_SECONDS = 86400
 CALLS_PER_DAY = 100
 
+"""Calling some decorators function for limit checking"""
 @on_exception(expo, RateLimitException, max_tries=2)
 @limits(calls=CALLS_PER_MINUTES_IN_SECONDS, period=MINUTES_IN_SECONDS)
 @limits(calls=DAY_IN_SECONDS, period=CALLS_PER_DAY)
