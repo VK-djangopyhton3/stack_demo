@@ -1,6 +1,6 @@
-# Invoice Management Software
+# StackOverflow Question Search Software
 
-The objective of this assignment is to develop an invoice management system for Acme Inc. A typical workflow for Acme Inc.
+The objective of this assignment is to develop an StackOverflow Question Search  system for teamwave. A typical workflow for teamwave .
 
 ## Clone the project
 Clone the project from Github:
@@ -18,7 +18,7 @@ Clone the project from Github:
 ## Virtual Environment Setup
 Create Virtualenv Folder
 
-    virtualenv --python=python3.8 Project_dir/.venv
+    virtualenv --python=python3.10 Project_dir/.venv
 
 
 Activate Environment:
