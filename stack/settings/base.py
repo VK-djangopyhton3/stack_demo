@@ -14,6 +14,8 @@ from pathlib import Path
 import sys
 import os
 from decouple import config
+import django_heroku
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -167,3 +169,5 @@ CORS_ORIGIN_ALLOW_ALL = True
 #     'register_proxy_auth_group_model': True,
 # }
 
+# Activate Django-Heroku.
+django_heroku.settings(locals())
