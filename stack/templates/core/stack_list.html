@@ -1,0 +1,66 @@
+{% extends '../layout.html' %}
+{% load i18n static widget_tweaks%}
+
+{% block title %}Invoices{% endblock %}
+
+{% block content %}
+    <section >
+        <div class="container margintop">
+
+            <table id="inviceTable" class="table table-bordered table-fix" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Question Link</th>
+                        <th>Is Answered</th>
+                        <th>View Count</th>
+                        <th>Protected Date</th>
+                        <th>Accepted Answer Id</th>
+                        <th>Answer Count</th>
+                        <th>Score</th>
+                        <th>Last Activity Date</th>
+                        <th>Creation Date</th>
+                        <th>Last Edit Date</th>
+                        <th>Question Id</th>
+                        <th>Content License</th>
+                        <th>Tags</th>
+                        <th>Owner Detail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                        <tr>
+                            <td>{{item.title}}</td>
+                            <td><a href="{{item.link}}" target="blank">Go To Question</a></td>
+                            <td>{{item.is_answered}}</td>
+                            <td>{{item.view_count}}</td>
+                            <td>{{item.protected_date}}</td>
+                            <td>{{item.accepted_answer_id}}</td>
+                            <td>{{item.answer_count}}</td>
+                            <td>{{item.score}}</td>
+                            <td>{{item.last_activity_date}}</td>
+                            <td>{{item.creation_date}}</td>
+                            <td>{{item.last_edit_date}}</td>
+                            <td>{{item.question_id}}</td>
+                            <td>{{item.content_license}}</td>
+                            <td>{{item.tags}}</td>
+                            <td>{{item.owner}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#inviceTable').DataTable({
+                
+            });
+        });
+    </script>
+    
+{% endblock js %}

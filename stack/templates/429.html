@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% load i18n static %}
+
+{% block title %}Error Too Many Requests{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h2>Oops! Too Many Requests.</h2>
+        <h1>429</h1>
+        <p>You can try after {{remaining_time}} seconds.</p>
+        <p>You can make 5 requests per minute and 100 requests a day!</p>
+        <a href="/" class="mt-3">Go back home</a>
+    </div>
+{% endblock %}
