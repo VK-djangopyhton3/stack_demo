@@ -1,5 +1,6 @@
 from .base import *
 
+"""This settings I have used on my local"""
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql_psycopg2',

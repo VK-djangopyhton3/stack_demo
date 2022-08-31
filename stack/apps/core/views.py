@@ -9,11 +9,14 @@ import requests
 
 
 class StackListView(TemplateView):
+    # specify name of template
     template_name = 'core/stack_list.html'
 
     def get(self, request, *args, **kwargs):
         context = self.get_context_data(**kwargs)
         context['list_page'] = True
+
+        """Get all response data from session and append with context"""
         context['stack_data'] = request.session.get('stack_data')
         if context['stack_data'] and 'items' in context['stack_data']:
             context['items'] = context['stack_data']['items']
@@ -38,12 +41,13 @@ class SearchPageView(FormView):
             payload={}
             headers = {}
 
+            """This is the method for check limit """
             response = call_api_with_check_time_limit(url, payload, headers)
             if 'is_limit_exceeds' in response and response['is_limit_exceeds']:
                 self.request.session['remaining_time'] = response['remaining_time']
                 return redirect('core:api_limit')
 
-
+            """Set or Assign response data in session"""
             self.request.session['stack_data'] = response.json()
 
             return redirect('core:stack_list')
@@ -57,5 +61,6 @@ class RateLimitErrorPage(TemplateView):
 
     def get(self, request, *args, **kwargs):
         context = self.get_context_data(**kwargs)
+        """Get remaining time from session"""
         context['remaining_time'] = request.session.get('remaining_time')
         return self.render_to_response(context)
