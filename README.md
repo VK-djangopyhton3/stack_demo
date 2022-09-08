@@ -1,6 +1,6 @@
 # StackOverflow Question Search Software
 
-The objective of this assignment is to develop an StackOverflow Question Search  system for teamwave. A typical workflow for teamwave .
+The objective of this assignment is to develop an StackOverflow Question Search  system for Santophy. A typical workflow for Santophy .
 
 ## Clone the project
 Clone the project from Github:
