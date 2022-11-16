@@ -1,6 +1,6 @@
 # StackOverflow Question Search Software
 
-The objective of this assignment is to develop an StackOverflow Question Search  system for Santophy. A typical workflow for Santophy .
+The objective of this assignment is to develop an StackOverflow Question Search  system for Organization. A typical workflow for Organization .
 
 ## Clone the project
 Clone the project from Github:
